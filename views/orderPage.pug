@@ -1,0 +1,57 @@
+extends base
+
+block content
+    section.check-out-container.d-flex
+        .insider
+            .checkout-information-fillup
+                label.bold-text Checkout
+                br
+                br
+                label Contact Info
+                .contact-info
+                    input.spacer(type='email' name='' id='' placeholder='email' value=user.email)
+                    input.spacer(type='number' name='' id='' placeholder='contact number' value=user.email)
+                br
+                label Shopping Info
+                .contact-info
+                    input.spacer(type='text' name='' id='' placeholder='user name'  value=user.name)
+                    input.spacer(type='text' name='' id='' placeholder='area detail')
+                    input.spacer(type='number' name='' id='' placeholder='pincode')
+                    input.spacer(type='text' name='' id='' placeholder='shipping address')
+                    .address
+                        input.widther.spacer(type='text' name='' id='' placeholder='city')
+                        select#select.widther.spacer(name='')
+                            option(value='morang') morang
+                            option(value='sunsari') sunsari
+                            option(value='kathmandu') kathmandu
+
+            .checkout-product-display
+                label.bold-text Payment
+                br
+                br
+                br
+                .payment-container
+                    p.payment-text Payment
+                    hr
+                    .total-payable
+                        p(for='payment-text total_price') Total Payable
+                        label(for='price') 550
+                    button.place-order Place Order
+                br
+                .payment-container
+                    p.payment-text Summary
+                    hr
+                    .image-name-size-display.total-payable
+                        div
+                            img(src='./../images/product/Statue-Of-Liberty-hoodie_meta.png' alt='' height='100vh')
+                            label(for='price') Status of Liberty (S)
+                        .price-tag
+                            label(for='price') 500
+                    hr
+                    .delivery-section
+                        label(for='delivery-charge-text') Delivery 
+                        label.price(for='price') Free
+                    hr
+                    .sub-total-section
+                        label(for='sub-total-text') Sub-Total 
+                        label(for='price') 500

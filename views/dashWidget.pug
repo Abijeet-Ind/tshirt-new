@@ -1,0 +1,57 @@
+extends dashbase
+
+block contentDash
+    // Content Start
+    .content
+        // navigation ya aauxa
+        nav.navbar.navbar-expand.bg-light.navbar-light.sticky-top.px-4.py-0
+            a.sidebar-toggler.flex-shrink-0(href='#')
+                i.fa.fa-bars
+        // navigation ya aauxa
+        // Sale & Revenue Start
+        .container-fluid.pt-4.px-4
+            .row.g-4
+                .col-sm-6.col-xl-3
+                    .bg-light.rounded.d-flex.align-items-center.justify-content-between.p-4
+                        i.fa.fa-chart-bar.fa-3x.text-primary
+                        .ms-3
+                            p.mb-2 Total Order Send
+                            h6.mb-0 $1234
+                .col-sm-6.col-xl-3
+                    .bg-light.rounded.d-flex.align-items-center.justify-content-between.p-4
+                        i.fa.fa-chart-pie.fa-3x.text-primary
+                        .ms-3
+                            p.mb-2 Total Revenue
+                            h6.mb-0 $1234
+
+        each sendItem in fromSendItem
+            .container-fluid.pt-4.px-4
+                .row.pt-4.class-align-items.d-flex
+                    .container-of-name-and-image.d-flex.align-items-center.justify-content-space-between
+                        .image-of-container(style='height: 15vh; padding: 1rem 1rem;')
+                            img(src=`images/product/upload/${sendItem.tshirtImage}` id="imageFromDB" alt='' style='height: 100%;')
+                        .image-of-container
+                            h4#name=  sendItem.name
+    
+                    .container-of-name-and-text.d-flex.justify-content-space-around
+                        .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; padding: 1rem 1rem;')
+                            h4.no-of-order 800
+    
+                    .container-of-name-and-text.d-flex.justify-content-space-around
+                        .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; padding: 1rem 1rem;')
+                            h4.no-of-order#contact= sendItem.contact
+    
+                    .container-of-name-and-text.d-flex.justify-content-space-around
+                        .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; width: 20rem; padding: 1rem 1rem;')
+                            h4.no-of-order#location= sendItem.location
+    
+                    .container-of-name-and-text.d-flex.justify-content-space-around
+                        a(href=`./images/product/upload/${sendItem.tshirtImage}` target='_blank') 
+                            .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; padding: 1rem 1rem;')
+                                button.send-of-order Image Link
+                        a(href=`./images/product/upload/${sendItem.sticker}` target='_blank') 
+                            .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; padding: 1rem 1rem;')
+                                button.send-of-order Sticker Link
+                            
+                        .image-of-container.d-flex.justify-content-center.align-items-center(style='height: 15vh; padding: 1rem 1rem;')
+                            button.send-of-order#send-of-order Order Send
